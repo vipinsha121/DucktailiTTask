@@ -1,0 +1,66 @@
+<div class="container mt-5">
+    <div class="row">
+        <!-- create to do -->
+        <div class="col-md-4" style="background: #f6f6f6;">
+            <h3>Create ToDo</h3>
+            <form [formGroup]="taskForm">
+                <div class="form-group">
+                    <label>Task Name</label>
+                        <input class="form-control" type="text" name="taskName" formControlName="taskName" (blur)="onSubmit()"/>
+                    <div *ngIf="submitted && taskForm.controls.taskName.errors" class="invalid">
+                        <div *ngIf="taskForm.controls.taskName.errors.required">
+                        Name is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="body">Description</label>
+                    <textarea type="text" row="3" id="body" class="form-control" formControlName="taskDescription"
+                        placeholder="" (blur)="onSubmit()"></textarea>
+                    <div *ngIf="submitted && taskForm.controls.taskDescription.errors" class="invalid">
+                        <div *ngIf="taskForm.controls.taskDescription.errors.required">
+                            Description is required
+                        </div>
+                        <div *ngIf="taskForm.controls.taskDescription.errors.maxlength">
+                            Description must be max 250 characters long.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Repeating</label>
+                    <div class="input-group">
+                        <select class="form-control" formControlName="repeatingTask" (change)="onSubmit()">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div *ngIf="submitted && taskForm.controls.repeatingTask.errors" class="invalid">
+                        <div *ngIf="taskForm.controls.repeatingTask.errors.required">
+                            Repeating is required.
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8" style="padding-left: 50px;">
+            <!-- todo list -->
+            <div class="row" style="background: #ff520052;">
+                <h3>ToDo List</h3>
+                <div class="col-md-12">
+                    <to-do-list></to-do-list>
+                </div>
+            </div>
+            <!-- done list -->
+            <div class="row mt-5" style="background: #4dd791;">
+                <h3>Done List</h3>
+                <div class="col-md-12">
+                    <done-list></done-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    

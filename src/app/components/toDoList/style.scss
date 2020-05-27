@@ -1,0 +1,43 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  h4.card-title{
+    position: relative;
+    display: inline;
+    color: #b72fd0!important;
+   // text-align: center;
+    font-weight: 700 !important;
+    font-size: 18px;
+    
+  }
+  .form-check .form-check-label span {
+ top: -8px!important;  
+}
+th.mat-header-cell {
+    text-align: left;
+    font-size: 15px;
+    font-weight: 900;
+}
+.form-check-input {
+  position: absolute;
+  margin-top: -0.7rem;
+  margin-left: -1.25rem;
+}
+.material-icons.cutom {
+  color:#02325d;
+}
+.material-icons.cutom {
+  font-size: 40px !important;
+  margin-left: auto;
+  cursor: pointer!important;
+  margin-top: -10px !important;
+  float: right;
+}
+.back{
+  float:left !important;
+}

@@ -1,0 +1,25 @@
+<div class="gradient">
+    <div class="container" style="z-index: unset;">
+        <div class="row">
+       <div style="width:100%">
+          <p class="loading" *ngIf="!(doneList && doneList.length)">
+            <small>Empty</small>
+          </p>
+         <table class="table" *ngIf="(doneList && doneList.length)">
+          <tr>
+            <th>Undo</th>
+            <th>Task name</th>
+            <th>Description</th>
+            <th>Repeating</th>
+          </tr>
+            <tr *ngFor="let t of doneList; index as i">
+            <td style="text-align: center;"><input class="form-check-input" type="checkbox" value="" (change)="markToUndo(i)"></td>
+            <td>{{t?.taskName}}</td>
+            <td>{{t?.taskDescription}}</td>
+            <td>{{t?.repeatingTask}}</td>
+          </tr>
+        </table>
+      </div>
+       </div>
+    </div>
+  </div>
